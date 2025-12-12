@@ -48,6 +48,15 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
+      <head>
+        {process.env.NODE_ENV === 'production' && (
+          <script
+            defer
+            src="https://umami-pr.up.railway.app/script.js"
+            data-website-id="2242a1c2-ba9f-47d2-8b74-f1aedb5484a0"
+          />
+        )}
+      </head>
       <body className={inter.className}>
         <Navigation />
         <main className="min-h-screen">{children}</main>
